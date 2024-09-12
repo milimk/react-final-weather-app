@@ -1,13 +1,14 @@
 import "./App.css";
+import Weather from "./Weather";
 
 export default function App() {
   return (
     <div className="App">
-      <div className="container">
-        <header>
-          <h1>React Weather App</h1>
-        </header>
-        <main></main>
+      <div className="container pt-5">
+        <header></header>
+        <main>
+          <Weather />
+        </main>
         <footer>
           This project was coded by{" "}
           <a href="https://github.com/milimk" target="_blank" rel="noreferrer">
