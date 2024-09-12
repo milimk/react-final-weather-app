@@ -4,10 +4,8 @@ import "./Weather.css";
 export default function Weather() {
   return (
     <div className="Weather">
-      <div className="p-4">
-        <div className="pb-1">
-          Current time: Setember 12, 2024, Thursday 11:27 AM
-        </div>
+      <div className="pt-4 mx-5">
+        <div className="pb-1">Setember 12, 2024, Thursday 11:27 AM</div>
         <div>
           <form>
             <div className="row">
@@ -16,6 +14,7 @@ export default function Weather() {
                   type="search"
                   placeholder="Enter a city"
                   required
+                  autoFocus="on"
                   className="form-control w-100"
                 ></input>
               </div>
@@ -23,7 +22,7 @@ export default function Weather() {
                 <input
                   type="submit"
                   value="Search"
-                  className="btn btn-primary w-100"
+                  className="btn-style w-100"
                 ></input>
               </div>
             </div>
@@ -31,17 +30,18 @@ export default function Weather() {
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <div className="current-weather text-center pt-3">
+        <div className="current-weather text-center pt-5">
           <h2>Vancouver</h2>
           <div className="row">
             <div>
               <img
                 src="https://cdn2.iconfinder.com/data/icons/weather-365/64/weather-sun-cloud-rain-512.png"
-                width="50"
                 alt="Weather Icon"
+                className="weatherIcon"
               />
+              <span className="current-temp">9</span>
+              <span className="unit">˚C</span>
             </div>
-            <div>9˚C</div>
           </div>
           <div className="pt-3">WEATHER CONDITION</div>
           <div className="row text-center justify-content-center p-5">

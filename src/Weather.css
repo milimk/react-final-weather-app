@@ -1,4 +1,48 @@
 .Weather {
-  background-color: aqua;
-  margin-top: -10px;
+  background-color: #fff9f0;
+  margin-top: -20px;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.Weather .btn-style {
+  background-color: #f68785;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.Weather .btn-style:hover {
+  background-color: #e85d5b;
+  color: white;
+}
+
+.Weather .form-control {
+  background-color: #ffe6e3;
+  border: none;
+  padding: 10px;
+}
+
+.Weather .form-control:focus {
+  background-color: #ffe6e3;
+}
+
+.Weather .weatherIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.Weather .current-temp {
+  font-weight: 600;
+  font-size: 50px;
+  padding-left: 15px;
+}
+
+.Weather .unit {
+  position: relative;
+  top: -20px;
+  font-weight: 500;
+  font-size: 20px;
 }
