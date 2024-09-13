@@ -7,13 +7,15 @@ export default function Weather() {
   const [weatherData, setWeatherData] = useState({});
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       temperature: response.data.temperature.current,
       humidity: response.data.temperature.humidity,
       city: response.data.city,
       wind: response.data.wind.speed,
       conditions: response.data.condition.description,
+      weatherIcon: response.data.condition.icon_url,
+      iconDescription: response.data.condition.icon,
+      currentTime: "Tuesday, September 13, 2024",
     });
     setReady(true);
   }
@@ -22,7 +24,7 @@ export default function Weather() {
     return (
       <div className="Weather">
         <div className="pt-4 mx-5">
-          <div className="pb-1">Setember 12, 2024, Thursday 11:27 AM</div>
+          <div className="pb-1">{weatherData.currentTime}</div>
           <div>
             <form>
               <div className="row">
@@ -52,8 +54,8 @@ export default function Weather() {
             <div className="row">
               <div>
                 <img
-                  src="https://cdn2.iconfinder.com/data/icons/weather-365/64/weather-sun-cloud-rain-512.png"
-                  alt="Weather Icon"
+                  src={weatherData.weatherIcon}
+                  alt={weatherData.iconDescription}
                   className="weatherIcon"
                 />
                 <span className="current-temp">
@@ -62,9 +64,18 @@ export default function Weather() {
                 <span className="unit">˚C</span>
               </div>
             </div>
-            <div className="pt-3">{weatherData.conditions}</div>
-            <span>Humidity: {weatherData.humidity}%</span>,{" "}
-            <span>Wind: {weatherData.wind}</span>km/h
+            <div className="text-capitalize condition">
+              {weatherData.conditions}
+            </div>
+            <span>
+              Humidity:{" "}
+              <span className="condition-bold">{weatherData.humidity}%</span>
+            </span>
+            ,{" "}
+            <span>
+              Wind:
+              <span className="condition-bold">{weatherData.wind}km/h</span>
+            </span>
             <div className="row text-center justify-content-center p-5">
               <div className="forecast-day border col-2">Forecast Day</div>
               <div className="forecast-day border col-2">Forecast Day</div>

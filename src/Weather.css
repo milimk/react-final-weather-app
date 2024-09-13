@@ -29,13 +29,13 @@
 }
 
 .Weather .weatherIcon {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 25px;
 }
 
 .Weather .current-temp {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 50px;
   padding-left: 15px;
 }
@@ -45,4 +45,18 @@
   top: -20px;
   font-weight: 500;
   font-size: 20px;
+}
+
+.Weather .condition {
+  margin-top: -20px;
+}
+
+.Weather .condition-bold {
+  font-weight: 600;
+  color: #f67272;
+}
+
+.Weather h2 {
+  font-weight: 700;
+  font-size: 40px;
 }
