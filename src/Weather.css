@@ -32,6 +32,7 @@
   width: 80px;
   height: 80px;
   margin-bottom: 25px;
+  margin-right: -10px;
 }
 
 .Weather .current-temp {

@@ -1,4 +1,5 @@
 import React from "react";
+import DisplayTemperature from "./DisplayTemperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -8,15 +9,16 @@ export default function WeatherInfo(props) {
           <h2>{props.info.city}</h2>
           <div className="row">
             <div>
-              <img
-                src={props.info.weatherIcon}
-                alt={props.info.iconDescription}
-                className="weatherIcon"
-              />
-              <span className="current-temp">
-                {Math.round(props.info.temperature)}
+              <span>
+                <img
+                  src={props.info.weatherIcon}
+                  alt={props.info.iconDescription}
+                  className="weatherIcon"
+                />
               </span>
-              <span className="unit">˚C</span>
+              <span>
+                <DisplayTemperature celsius={props.info.temperature} />
+              </span>
             </div>
           </div>
           <div className="text-capitalize condition">
