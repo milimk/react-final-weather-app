@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./WeatherForecast.css";
 import WeatherForecastDay from "./WeatherForecastDay";
@@ -6,6 +6,13 @@ import WeatherForecastDay from "./WeatherForecastDay";
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
+
+  // Set 'loaded' to false
+  // If the city changes (trigger line above)
+  // To make an API call again
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.info.city]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
@@ -15,13 +22,20 @@ export default function WeatherForecast(props) {
   let city = props.info.city;
 
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="WeatherForecast">
         <div className="row justify-content-center">
-          <div className="border col-2">
-            <WeatherForecastDay data={forecast[0]} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col-2">
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );
