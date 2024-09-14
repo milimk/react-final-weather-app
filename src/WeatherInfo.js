@@ -35,15 +35,6 @@ export default function WeatherInfo(props) {
               <span className="condition-bold">{props.info.wind}km/h</span>
             </span>
           </div>
-          {/* FORECAST FOR FUTURE
-          <div className="row text-center justify-content-center">
-            <div className="forecast-day border col-2">Forecast Day</div>
-            <div className="forecast-day border col-2">Forecast Day</div>
-            <div className="forecast-day border col-2">Forecast Day</div>
-            <div className="forecast-day border col-2">Forecast Day</div>
-            <div className="forecast-day border col-2">Forecast Day</div>
-          </div>
-          */}
         </div>
       </div>
     </div>
